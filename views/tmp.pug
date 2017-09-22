@@ -1,0 +1,27 @@
+h1 Add a Place
+
+form action="/places" method="POST">
+  div.form-group
+    input.form-control(type="text" name="name" placeholder="Name")
+  div.form-group
+    input.form-control(type="text" name="address" placeholder="Address")
+    input.btn.btn-primary(type="submit")
+
+div.row
+  div.col-md-6
+    h2 Places
+    - places.forEach(function(place) {
+      div class="well">
+        <%= place.name %>
+      </div>
+    <% }); %>
+  </div>
+  <div class="col-md-6">
+    <h2>Map</h2>
+    <div id="map"></div>
+  </div>
+</div>
+
+
+<!-- scripts -->
+<script src="/js/script.js"></script>
